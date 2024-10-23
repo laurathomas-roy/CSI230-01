@@ -1,1 +1,1 @@
-ip addr | awk '/scope global/ {print}' | cut -c 10-19
+ip addr | grep 'inet' | awk '/scope global/ {print$2}' | cut -d'/' -f1
